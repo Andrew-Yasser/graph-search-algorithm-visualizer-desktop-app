@@ -45,10 +45,9 @@ def CalcPathCost(inputedges,edges_weights):
     for i in range(len(solpath)-1):
         cost+= weights.get((solpath[i],solpath[i+1]))
     return cost
-    path = []
             
             
-solpath, visitednodes = bfs(graph, 'a', ['j','G'])
+solpath, visitednodes = BFS(graph, 'a', ['j','G'])
 
 
 print("the solution path is", solpath)
