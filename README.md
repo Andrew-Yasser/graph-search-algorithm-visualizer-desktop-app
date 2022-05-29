@@ -7,4 +7,5 @@ Graph visualizations made using networkx, PYVIS and matplot lib
 UI made using PYQT5 using QT designer for designing
 
 Logic file having helper functions and implementations of algorithms 
+
 app file is the file that runs the applications 
