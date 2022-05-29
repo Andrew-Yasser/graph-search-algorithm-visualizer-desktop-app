@@ -78,20 +78,17 @@ def BuildDictWithCost (nodes, graphdict, edges_weights):
     newgraph = dict(zip(nodes, NewVals))
     return newgraph
     
-    
-# function to calculate the cost of the solution path
-def CalcPathCost(edges,EdgesWeights, solpath):
-    edgecosts = dict(zip(tuple(edges), EdgesWeights))
-    edgecosts.values()
-    cost = 0
-    for i in range(len(solpath) - 1):
-        cost += edgecosts.get((solpath[i], solpath[i + 1]))
-    return cost
-        
+#Function to seperate solution path from each node cost
+def GetSolutionPathAsList(SolutionPath):
+  list=[item[0] for item in SolutionPath]
+  return list
+
 f= BuildDictWithCost(Nodes,graph,edges_weights)
-solpath,visited= UniCost(f,"a",["G","j"])
+p,visited= UniCost(f,"a",["G","j"])
+solpath = GetSolutionPathAsList(p)
+c = PathCost(p)[0]
 
 print("the solution path is", solpath)
 print("the visited nodes are",visited)
-print("cost is", CalcPathCost(inputedges,edges_weights, solpath))
+print("cost is", c)
 
