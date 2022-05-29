@@ -38,9 +38,9 @@ def BFS(graph, InitialNode, GoalNode):
             new_path.append(adjacent)
             queue.append(new_path)
             
-def CalcPathCost(inputedges):
+def CalcPathCost(inputedges,edges_weights):
     weights= dict(zip(inputedges, edges_weights))
-    print(weights)
+    #print(weights)
     cost=0
     for i in range(len(solpath)-1):
         cost+= weights.get((solpath[i],solpath[i+1]))
@@ -53,4 +53,4 @@ solpath, visitednodes = bfs(graph, 'a', ['j','G'])
 
 print("the solution path is", solpath)
 print("the visited nodes are",visitednodes)
-print("cost is", CalcPathCost(inputedges))
+print("cost is", CalcPathCost(inputedges,edges_weights))
