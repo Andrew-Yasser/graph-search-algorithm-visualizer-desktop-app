@@ -1,0 +1,8 @@
+def IDDLS(graph, start, goal, max_depth):
+    # iterate depth-limit search till the maximum specified depth to get shallowest path.
+    for iterat in range(0, max_depth+1):
+        result = DLS(graph, start, goal, pathlist, 0, iterat) #calls the depth limited function with the iteration as the max level
+        # if result if found and not false bring it with the level it is found at
+        if (result):
+            return result, iterat
+    return False, False
